@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* :before, after {
+  box-sizing:border-box;
+  
+  }
+
+img {
+  max-width:100%;
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header {
+  background-color:#3DC4FC;
+  width : 100vw;
+  padding-top: 1em;
+  padding-bottom:1em;
+}
+
+header img {
+
+  width: 10%;
+
+}
+
+.beersArticle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 20vh;
+  border-bottom: solid 0.5px gray;
+  margin: auto 2em auto 2em;
+}
+
+.beersArticle img {
+  width: 8vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  
+}
+
+.beersArticle a {
+  text-decoration: none;
+color:inherit;
+
+}
+
+.beersArticle h4 {
+   color:gray;
+}
+
+.beersArticle p {
+  font-size: 0.5em;
+}
+
+.beersText {
+  text-align: left;
+}
+
+.beer {
+  margin:1em;
+  text-align:left ;
+}
+
+.beer img {
+  text-align: center;
+  width:15vw;
+ 
+}
+
+.headerSingle {
+  display:flex;
+  justify-content: space-between;
+}
+
+.secondSingle {
+  display:flex;
+  justify-content: space-between;
+}
+
+label {
+  display:block;
+}
+
+input, textarea {
+  width : 80vw;
+  border-radius: 10px;
+}
+
+.blueButton {
+  margin-top:2em;
+  background-color: #3DC4FC;
+}
