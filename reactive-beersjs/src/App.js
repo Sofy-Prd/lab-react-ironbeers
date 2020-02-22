@@ -17,7 +17,6 @@ function App() {
           <Route exact path="/beers" component={Beers}/>
           <Route exact path="/random-beer" component={RandomBeers} />
           <Route exact path="/new-beer" component={NewBeer} />
-
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/beers/:id" component={SingleBeer} />
       </Switch>

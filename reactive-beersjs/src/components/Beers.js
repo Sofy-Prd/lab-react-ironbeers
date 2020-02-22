@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header'
+import SearchBar from './Search'
 
 import { Link } from 'react-router-dom';
 
 
 class Beers extends Component {
     state = {
-        listOfBeers :[]
-        
+        listOfBeers :[],
+        query: ''
+    }
+
+    handleQuery = (ev) => {
+      this.setState({
+        query: ev.target.value    
+      })
+
+      
     }
 
     getAllBeers = () =>{
+
         axios.get(`https://ih-beers-api2.herokuapp.com/beers`)
           .then(responseFromApi => {
             this.setState({listOfBeers: responseFromApi.data})
@@ -23,12 +33,22 @@ class Beers extends Component {
         this.getAllBeers();
       }
     render() {
+      let query = this.state.query;
+      let beers= [... this.state.listOfBeers];
+
+      beers = beers.filter(beer => beer.name.includes(query))
+
+      console.log("beers",beers);
+
+
+
         return (
             <div>
               <Header/>
-             
-               <div>
-                { this.state.listOfBeers.map( beer => {
+              <SearchBar query={this.state.query} handleQuery={this.handleQuery}/>
+                    
+               
+                { beers.map( beer => {
                         return (
                           <div className="beersArticle">
                               <img src={beer.image_url}/>
@@ -41,12 +61,12 @@ class Beers extends Component {
 
                           )})
                 }
-                 </div>
+            
 
               
             </div>
         )
     }
-}
+  }
 
 export default Beers;
